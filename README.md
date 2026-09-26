@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h1 align="center">ruff</h1>
+<h1 align="center">Ruff</h1>
 
 ## Overview
 
@@ -70,6 +70,7 @@ The following environment variables customise the script:
 | `SHOW_UNMATCHED` | `false`        | Show files that matched neither pattern            |
 | `SCAN_ROOT`      | script default | Override scan directory without editing the script |
 
+> [!NOTE]
 > If you set `INCLUDE_FILES`, only matching paths are scanned (everything else is skipped, including paths that would match `EXCLUDE_FILES`).
 
 You can combine any of the settings above:
@@ -98,8 +99,6 @@ jobs:
 
 ## Example Output
 
-Example shape of a successful run (details vary by tool version):
-
 ```text
 --------------------------------------------------------------------- Stage 1: Parameters --
  No parameters given
@@ -118,11 +117,9 @@ Files are identified using the following checks:
 
 ```shell
 file -b "${filename}" | grep -qE '^Python script'
-```
 
-and / or name match:
+AND
 
-```shell
 [[ ${filename} =~ \.py$ ]]
 ```
 
